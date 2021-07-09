@@ -1,0 +1,34 @@
+<h1>Daftar Mahasiswa</h1>
+<h5>Dengan EJS For</h5>
+<div class="card">
+    <div class="card-body">
+        <% if (mahasiswa.length) { %>
+            <% for( let i=0; i < mahasiswa.length; i++ ) { %>
+                <ul>
+                    <li>Nama: <%= mahasiswa[i].nama %></li>
+                    <li>Email: <%= mahasiswa[i].email %></li>
+                </ul>
+            <% } %>
+        <% } else { %>
+             <p>Data Mahasiswa Kosong</p>
+        <% } %>
+    </div>
+</div>
+
+<br>
+
+<h5>Dengan EJS Each</h5>
+<div class="card">
+    <div class="card-body">
+        <% if (mahasiswa.length) { %>
+            <% mahasiswa.forEach(m => { %>
+                <ul>
+                    <li>Nama: <%= m.nama %></li>
+                    <li>Email: <%= m.email %></li>
+                </ul>
+            <% }) %>
+        <% } else { %>
+            <p>Data Mahasiswa Kosong</p>
+        <% } %>
+    </div>
+</div>

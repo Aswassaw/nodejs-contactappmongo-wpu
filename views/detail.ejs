@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col">
+        <h2>Detail Contact</h2>
+        <% if (contact) { %>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"><%= contact.nama %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= contact.nohp %></h6>
+                    <p class="card-text"><%= contact.email %></p>
+                    <a href="/contact/edit/<%= contact._id %>" class="btn btn-info badge">Ubah</a>
+                    <form style="display: inline-block;" action="/contact/<%= contact._id %>?_method=DELETE" method="post">
+                        <button class="btn btn-danger badge" type="submit" onclick="return confirm('Apakah anda yakin?')">Hapus</button>
+                    </form>
+                    <a href="/contact" class="card-link d-block mt-3">&laquo; Kembali ke Daftar</a>
+                </div>
+            </div>
+        <% } else { %>
+            <div class="alert alert-danger" role="alert">
+                Data tersebut tidak ditemukan, <a href="/contact">&laquo; Kembali ke Daftar</a>.
+            </div>              
+        <% } %>
+    </div>
+</div>
